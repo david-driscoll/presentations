@@ -261,6 +261,7 @@
 		// Cache references to key DOM elements
 		dom.wrapper = document.querySelector( '.reveal' );
 		dom.slides = document.querySelector( '.reveal .slides' );
+		dom.footer = document.querySelector('footer');
 
 		// Force a layout when the whole page, incl fonts, has loaded
 		window.addEventListener( 'load', layout, false );
@@ -1528,12 +1529,24 @@
 				dom.slides.style.bottom = '';
 				dom.slides.style.right = '';
 				transformSlides( { layout: '' } );
+
+				// ADDED
+				dom.footer.style.zoom = '';
+				dom.footer.style.left = '';
+				dom.footer.style.top = '';
+				dom.footer.style.bottom = '';
+				dom.footer.style.right = '';
+				// ADDED
 			}
 			else {
 				// Prefer zooming in desktop Chrome so that content remains crisp
 				if( !isMobileDevice && /chrome/i.test( navigator.userAgent ) && typeof dom.slides.style.zoom !== 'undefined' ) {
 					dom.slides.style.zoom = scale;
 					transformSlides( { layout: '' } );
+
+					// ADDED
+					dom.footer.style.zoom = scale;
+					// ADDED
 				}
 				// Apply scale transform as a fallback
 				else {
@@ -1542,6 +1555,13 @@
 					dom.slides.style.bottom = 'auto';
 					dom.slides.style.right = 'auto';
 					transformSlides( { layout: 'translate(-50%, -50%) scale('+ scale +')' } );
+
+					// ADDED
+					dom.footer.style.left = '50%';
+					dom.footer.style.top = '50%';
+					dom.footer.style.bottom = 'auto';
+					dom.footer.style.right = 'auto';
+					// ADDED
 				}
 			}
 
