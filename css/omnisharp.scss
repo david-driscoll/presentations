@@ -38,6 +38,23 @@ footer {
             box-shadow: none !important;
         }
     }
+
+    .twitter {
+        background: rgba(0,0,0,0.5);
+        padding: 20px;
+        border: 20px rgba(0,0,0,0.0) solid;
+        border-top-right-radius: 20px;
+        position: fixed;
+        left: -90px;
+        bottom: -326px;
+        text-align: left;
+
+        img {
+            height: 1em;
+            width: 1em;
+            vertical-align: middle;
+        }
+    }
 }
 
 img {
