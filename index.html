@@ -54,10 +54,9 @@
 						Hello and welcome...
 
 						Hand raise for...
-						* Heard of OmniSharp
-						* OmniSharp
 
-						(go more general)
+						* Heard of OmniSharp
+						* OmniSharp (go more general)
 						* VS Users
 						* Windows Users
 						* Mac Users
@@ -68,7 +67,8 @@
 				<div class="twitter">
 					David Driscoll
 					</br>
-					@david_blacklite <img src="img/twitter.png" />
+					@david_blacklite
+					<img src="img/twitter.png" />
 				</div>
 			</section>
 
@@ -79,12 +79,13 @@
 					<B>YOUR</B>
 				</span> editor of choice.
 
-				<aside class="notes">
-					What does that mean?
-					* We want _you_ the developer to use your favorite editor
-					*
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						What does that mean?
 
-					We are also enabling this for cross platform development, including Mac, Linux and Windows.
+						* We want _you_ the developer to use your favorite editor
+						* We are also enabling this for cross platform development, including Mac, Linux and Windows.
+					</script>
 				</aside>
 			</section>
 
@@ -112,13 +113,19 @@
 						<img src="img/vim.png" class="fragment grow" data-fragment-index="8" />
 						<img src="img/vscode.png" class="fragment grow" data-fragment-index="4" data-autoslide="300" />
 					</div>
-					<div class="editors-caption">We now have editor plugins for some of<br/> the most popular text editors</div>
+					<div class="editors-caption">
+						We now have editor plugins for some of
+						<br/>
+						the most popular text editors
+					</div>
 				</div>
 
-				<aside class="notes">
-					Editors are in non-biased alphabetical order :)
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						Editors are in non-biased alphabetical order :)
 
-					We also ship with VSCode in the box
+						We also ship with VSCode in the box
+					</script>
 				</aside>
 			</section>
 
@@ -133,20 +140,70 @@
 					<li>VS Code - #TODO#</li>
 				</ul>
 
-				<aside class="notes">
-					Atom is up over 10,000 since June. Brackets Emacs / Vim Sublime VS Code Some of these numbers may be infated by extra installs and other possibilities. As with all statistics take that with a grain of salt.
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						Atom is up over 10,000 since June.
+						Brackets Emacs / Vim Sublime VS Code Some of these numbers may be infated by extra installs and other possibilities.
+						As with all statistics take that with a grain of salt.
+					</script>
 				</aside>
 			</section>
-
 			<section>
-				<img src="img/vs-services.png" />
+				<section>
+					<h2>So how does it work?</h2>
+
+					<aside class="notes" data-markdown>
+						<script type="text/template">
+							* To understand this, we have to have a view of Visual Studio works.
+						</script>
+					</aside>
+				</section>
+				<section>
+					<img src="img/vs-services.png" />
+				</section>
+
+				<section>
+					<!--<img src="img/omnisharp-services-white.png" />-->
+					<img src="img/omnisharp-services-black.png" />
+				</section>
 			</section>
 
 			<section>
-				<!--<img src="img/omnisharp-services-white.png" />-->
-				<img src="img/omnisharp-services-black.png" />
-			</section>
+				<section data-markdown>
+					<script type="text/template">
+						## OmniSharp Server
 
+						<br />
+						* V1 uses NRefactory and Nancy
+						* V2 uses Roslyn and AspNet 5 Mvc
+					</script>
+
+					<aside class="notes" data-markdown>
+						<script type="text/template">
+							* Do we need to do the Roslyn slide?
+							* Everyone know hat Roslyn is?
+						</script>
+					</aside>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						## What is Roslyn?
+
+						* The C# and VB compilers reimagined
+						* Allows you the ability to write C# that can reason about code, written in C#.
+						* Adds new features for editors
+						  * Code Fixes
+						  * Analyzers
+					</script>
+				</section>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Roslyn is very meta
+						* Everything is meta for C#
+					</script>
+				</aside>
+			</section>
 			<!-- Example of nested vertical slides -->
 			<section>
 				<section>
@@ -220,8 +277,11 @@
 					</p>
 
 					<aside class="notes">
-						This slide has fragments which are also stepped through in the notes window.
-					</aside>
+						<aside class="notes" data-markdown>
+							<script type="text/template">
+								This slide has fragments which are also stepped through in the notes window.
+							</script>
+						</aside>
 				</section>
 				<section>
 					<h2>Fragment Styles</h2>
