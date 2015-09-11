@@ -14,31 +14,38 @@ footer {
   footer.show {
     top: 0; }
 
-.title .box {
+.title {
+  height: 100%;
+  top: 0 !important; }
+  .title .box {
+    top: 2em;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 20px rgba(0, 0, 0, 0) solid;
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 20em; }
+    .title .box, .title .box h4 {
+      color: white; }
+    .title .box p {
+      font-size: 0.55em; }
+    .title .box img {
+      border: 0 !important;
+      background-color: transparent !important;
+      box-shadow: none !important; }
+
+.slides .twitter {
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border: 20px rgba(0, 0, 0, 0) solid;
+  padding: 0.25em;
+  border: 0.25em rgba(0, 0, 0, 0) solid;
+  line-height: 1.4em;
   border-radius: 20px;
-  margin: 0 auto;
-  width: 20em; }
-  .title .box, .title .box h4 {
-    color: white; }
-  .title .box p {
-    font-size: 0.55em; }
-  .title .box img {
-    border: 0 !important;
-    background-color: transparent !important;
-    box-shadow: none !important; }
-.title .twitter {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border: 20px rgba(0, 0, 0, 0) solid;
-  border-top-right-radius: 20px;
   position: fixed;
-  left: -90px;
-  bottom: -326px;
+  left: -82px;
+  bottom: 0;
   text-align: left; }
-  .title .twitter img {
+  .slides .twitter img {
     height: 1em;
     width: 1em;
     vertical-align: middle; }
@@ -53,6 +60,9 @@ img {
   box-shadow: none !important;
   border-radius: 15em; }
 
+.editors-caption.visible + .editors-caption {
+  opacity: 0; }
+
 .fragment.visible ~ .editors-caption {
   opacity: 0; }
 
@@ -62,7 +72,7 @@ img {
         left: 0;
         right: 0;
         margin-bottom: -27.5%;*/
-  margin-top: -5%; }
+  margin-top: 0; }
 .editors:nth-child(1) {
   transition-delay: 500ms; }
 .editors:nth-child(2) {

@@ -52,7 +52,16 @@
 
 				<aside class="notes" data-markdown>
 					<script type="text/template">
-						Hello and welcome... Hand raise for... * Heard of OmniSharp * OmniSharp (go more general) * VS Users * Windows Users * Mac Users * Linux Users
+						Hello and welcome...
+
+						Hand raise for...
+
+						* Heard of OmniSharp
+						* OmniSharp (go more general)
+						* VS Users
+						* Windows Users
+						* Mac Users
+						* Linux Users
 					</script>
 				</aside>
 
@@ -74,7 +83,10 @@
 
 					<aside class="notes" data-markdown>
 						<script type="text/template">
-							What does that mean? * We want _you_ the developer to use your favorite editor * We are also enabling this for cross platform development, including Mac, Linux and Windows.
+							What does that mean?
+
+							* We want _you_ the developer to use your favorite editor
+							* We are also enabling this for cross platform development, including Mac, Linux and Windows.
 						</script>
 					</aside>
 				</section>
@@ -89,10 +101,40 @@
 				</section>
 			</section>
 
+			<section>
+				<h2>What does this mean?</h2>
+				<ul>
+					<li class="fragment">Choose <i>your</i> .NET platform</li>
+					<li class="fragment">Choose <i>your</i> .NET editor</li>
+					<li class="fragment">Customize <i>your</i> .NET experience</li>
+				</ul>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Visual Studio isn't bad, but it shouldn't hold you back.
+						* Some of the editors have a great personalization story.
+					</script>
+				</aside>
+			</section>
+
+			<section>
+				<img class="stretch" src="img/blue-pill.png" />
+			</section>
+
+			<section>
+				<h2>Liberate yourself from</h2>
+				<img src="img/Visual Studio Cross.png" />
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Star Wars "Dark Side" reference
+					</script>
+				</aside>
+			</section>
 
 			<section class="editors">
 				<div class="editors-logos">
-					<div class="fragment fade-in" data-autoslide="300" data-fragment-index="1">
+					<div class="fragment fade-in" data-autoslide="300" data-fragment-index="2">
 						<img src="img/atom.png" class="fragment grow" data-autoslide="300" data-fragment-index="3" />
 						<img src="img/brackets.png" class="fragment grow" data-autoslide="300" data-fragment-index="7" />
 						<img src="img/emacs.png" class="fragment grow" data-autoslide="300" data-fragment-index="5" />
@@ -102,9 +144,11 @@
 						<img src="img/vim.png" class="fragment grow" data-fragment-index="8" />
 						<img src="img/vscode.png" class="fragment grow" data-fragment-index="4" data-autoslide="300" />
 					</div>
+					<div class="editors-caption fragment current-visible" data-fragment-index="1">
+						We now have editor plugins for some of <br/> the most popular text editors
+					</div>
 					<div class="editors-caption">
-						We now have editor plugins for some of
-						<br/> the most popular text editors
+						<h2>How?</h2>
 					</div>
 				</div>
 
@@ -134,22 +178,6 @@
 			</section>
 
 			<section>
-				<h2>What does this mean to me?</h2>
-				<ul>
-					<li class="fragment">Choose <i>your</i> .NET platform</li>
-					<li class="fragment">Choose <i>your</i> .NET editor</li>
-					<li class="fragment">Customize <i>your</i> .NET experience</li>
-				</ul>
-				<h3 class="fragment">Liberate yourself from Visual Studio</h3>
-
-				<aside class="notes" data-markdown>
-					<script type="text/template">
-						* Visual Studio isn't bad, but it shouldn't hold you back. * Some of the editors have a great personalization story.
-					</script>
-				</aside>
-			</section>
-
-			<section>
 				<section>
 					<h2>So how does it work?</h2>
 
@@ -164,7 +192,7 @@
 
 					<aside class="notes" data-markdown>
 						<script type="text/template">
-							Visual studio has a set of services that use roslyn, and then expose functionality in the UI
+							* Visual studio has a set of services that use roslyn, and then expose functionality in the UI
 						</script>
 					</aside>
 				</section>
@@ -175,39 +203,54 @@
 
 					<aside class="notes" data-markdown>
 						<script type="text/template">
-							* One service, many editors. * OmniSharp has a set of services, that we then expose as HTML endpoints, that editors can communicate with.
+							* One service, many editors.
+							* OmniSharp has a set of services, that we then expose as HTML endpoints, that editors can communicate with.
 						</script>
 					</aside>
 				</section>
 			</section>
+			<section data-markdown>
+				<script type="text/template">
+					## OmniSharp Server
+					<br />
+					* V1 uses NRefactory and Nancy
+					* V2 uses <ins>Roslyn</ins> and AspNet 5
+				</script>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Do we need to do the Roslyn slide?
+						* Everyone know what Roslyn is?
+						* .NET Compiler Platform
+					</script>
+				</aside>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					## What is Roslyn?
+
+					* The C# and VB compilers reimagined <!-- .element: class="fragment" -->
+					* Allows you the ability to write C# that can reason about code, written in C#. <!-- .element: class="fragment" -->
+					* Adds new features for editors <!-- .element: class="fragment" -->
+					  * Code Fixes
+					  * Analyzers
+				</script>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* From a developers persepective roslyn means very little.
+						* This is a good thing
+						* Roslyn is very meta
+						* From a developer coding with roslyn it means a location
+						* We get to peer into the inner workings of the compiler
+						* We can then help create some pretty amazing things.
+					</script>
+				</aside>
+			</section>
 
 			<section>
-				<section data-markdown>
-					<script type="text/template">
-						## OmniSharp Server
-
-						<br /> * V1 uses NRefactory and Nancy * V2 uses
-						<ins>Roslyn</ins> and AspNet 5
-					</script>
-
-					<aside class="notes" data-markdown>
-						<script type="text/template">
-							* Do we need to do the Roslyn slide? * Everyone know what Roslyn is? * .NET Compiler Platform
-						</script>
-					</aside>
-				</section>
-				<section data-markdown>
-					<script type="text/template">
-						## What is Roslyn? * The C# and VB compilers reimagined * Allows you the ability to write C# that can reason about code, written in C#. * Adds new features for editors * Code Fixes * Analyzers
-					</script>
-
-					<aside class="notes" data-markdown>
-						<script type="text/template">
-							* From a developers persepective roslyn means very little. * This is a good thing * Roslyn is very meta * From a developer coding with roslyn it means a location * We get to peer into the inner workings of the compiler * We can then help create some pretty
-							amazing things.
-						</script>
-					</aside>
-				</section>
+				<h1>Demos!</h1>
 			</section>
 
 			<section>
@@ -521,6 +564,8 @@
 
 	<footer>
 		<img src="img/logo-text-h.png" />
+
+		<img class="img-responsive" style="float: right" src="img/conf-logo-white.png" />
 	</footer>
 
 	<script src="lib/js/head.min.js"></script>
@@ -537,40 +582,27 @@
 			height: 900,
 			width: 1600,
 
-			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			transition: 'slide', // none/fade/slide/convex/concave/
+			multiplex: {
+		        // Example values. To generate your own, see the socket.io server instructions.
+		        secret: '14419322957904076034', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+		        id: '2cb40a8f839b4033', // Obtained from socket.io server
+		        url: 'http://localhost:1948' // Location of socket.io server
+		    },
 
 			// Optional reveal.js plugins
-			dependencies: [{
-				src: 'lib/js/classList.js',
-				condition: function() {
-					return !document.body.classList;
-				}
-			}, {
-				src: 'plugin/markdown/marked.js',
-				condition: function() {
-					return !!document.querySelector('[data-markdown]');
-				}
-			}, {
-				src: 'plugin/markdown/markdown.js',
-				condition: function() {
-					return !!document.querySelector('[data-markdown]');
-				}
-			}, {
-				src: 'plugin/highlight/highlight.js',
-				async: true,
-				condition: function() {
-					return !!document.querySelector('pre code');
-				},
-				callback: function() {
-					hljs.initHighlightingOnLoad();
-				}
-			}, {
-				src: 'plugin/zoom-js/zoom.js',
-				async: true
-			}, {
-				src: 'plugin/notes/notes.js',
-				async: true
-			}]
+			dependencies: [
+				{ src: 'lib/js/classList.js',	condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector('pre code'); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'lib/js/socket.io.min.js', async: true },
+				{ src: 'plugin/multiplex/master.js', async: true },
+        		// and if you want speaker notes
+        		//{ src: 'plugin/notes-server/client.js', async: true },
+		]
 		});
 	</script>
 	<script>

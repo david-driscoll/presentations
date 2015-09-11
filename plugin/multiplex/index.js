@@ -2,6 +2,7 @@ var express		= require('express');
 var fs			= require('fs');
 var io			= require('socket.io');
 var crypto		= require('crypto');
+var stream      = require('stream');
 
 var app			= express.createServer();
 var staticDir	= express.static;
@@ -24,7 +25,7 @@ io.sockets.on('connection', function(socket) {
 });
 
 app.configure(function() {
-	[ 'css', 'js', 'plugin', 'lib' ].forEach(function(dir) {
+	[ 'css', 'js', 'plugin', 'lib', 'img' ].forEach(function(dir) {
 		app.use('/' + dir, staticDir(opts.baseDir + dir));
 	});
 });
@@ -34,11 +35,41 @@ app.get("/", function(req, res) {
 	fs.createReadStream(opts.baseDir + '/index.html').pipe(res);
 });
 
+var clientHtml = undefined;
+app.get("/client", function(req, res) {
+	res.writeHead(200, {'Content-Type': 'text/html'});
+
+	if (!clientHtml) {
+		clientHtml = fs.readFileSync(opts.baseDir + '/index.html').toString();
+		clientHtml = clientHtml.replace("'14419322957904076034'", "null");
+		clientHtml = clientHtml.replace("{ src: 'plugin/notes-server/client.js', async: true },", "");
+		clientHtml = clientHtml.replace('plugin/multiplex/master.js', 'plugin/multiplex/client.js')
+	}
+
+	var s = new stream.Readable();
+	s._read = function noop() {}; // redundant? see update below
+	s.push(clientHtml);
+	s.push(null);
+
+	s.pipe(res);
+	//fs.createReadStream(opts.baseDir + '/index.html').pipe(res);
+});
+
 app.get("/token", function(req,res) {
 	var ts = new Date().getTime();
 	var rand = Math.floor(Math.random()*9999999);
 	var secret = ts.toString() + rand.toString();
 	res.send({secret: secret, socketId: createHash(secret)});
+});
+
+app.get( '/notes/:socketId', function( req, res ) {
+
+	fs.readFile( opts.baseDir + 'plugin/notes-server/notes.html', function( err, data ) {
+		res.send( Mustache.to_html( data.toString(), {
+			socketId : req.params.socketId
+		}));
+	});
+
 });
 
 var createHash = function(secret) {

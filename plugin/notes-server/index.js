@@ -41,16 +41,6 @@ app.get('/', function( req, res ) {
 
 });
 
-app.get( '/notes/:socketId', function( req, res ) {
-
-	fs.readFile( opts.baseDir + 'plugin/notes-server/notes.html', function( err, data ) {
-		res.send( Mustache.to_html( data.toString(), {
-			socketId : req.params.socketId
-		}));
-	});
-
-});
-
 // Actually listen
 app.listen( opts.port || null );
 

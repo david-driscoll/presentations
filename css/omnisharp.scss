@@ -20,7 +20,12 @@ footer {
     }
 }
 .title {
+    height: 100%;
+    top: 0 !important;
     .box {
+        top: 2em;
+        position: relative;
+
         background: rgba(0,0,0,0.5);
         padding: 20px;
         border: 20px rgba(0,0,0,0.0) solid;
@@ -40,22 +45,23 @@ footer {
             box-shadow: none !important;
         }
     }
+}
 
-    .twitter {
-        background: rgba(0,0,0,0.5);
-        padding: 20px;
-        border: 20px rgba(0,0,0,0.0) solid;
-        border-top-right-radius: 20px;
-        position: fixed;
-        left: -90px;
-        bottom: -326px;
-        text-align: left;
+.slides .twitter {
+    background: rgba(0,0,0,0.5);
+    padding: 0.25em;
+    border: 0.25em rgba(0,0,0,0.0) solid;
+    line-height: 1.4em;
+    border-radius: 20px;
+    position: fixed;
+    left: -82px;
+    bottom: 0;
+    text-align: left;
 
-        img {
-            height: 1em;
-            width: 1em;
-            vertical-align: middle;
-        }
+    img {
+        height: 1em;
+        width: 1em;
+        vertical-align: middle;
     }
 }
 
@@ -70,6 +76,9 @@ img {
     box-shadow: none !important;
     border-radius: 15em;
 }
+.editors-caption.visible + .editors-caption {
+    opacity: 0;
+}
 .fragment.visible ~ .editors-caption {
     opacity: 0;
 }
@@ -80,7 +89,7 @@ img {
         left: 0;
         right: 0;
         margin-bottom: -27.5%;*/
-        margin-top: -5%;
+        margin-top: 0;
     }
 
         &:nth-child(1) {
