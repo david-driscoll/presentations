@@ -76,6 +76,9 @@ img {
         right: 0;
         margin-bottom: -27.5%;*/
   margin-top: 0; }
+  .editors .editors-logos .fragment {
+    display: inline-block;
+    padding: 1em 2em; }
 .editors:nth-child(1) {
   transition-delay: 500ms; }
 .editors:nth-child(2) {
@@ -103,8 +106,7 @@ img {
   height: 4em;
   border: 0 !important;
   background-color: transparent !important;
-  box-shadow: none !important;
-  padding: 2em; }
+  box-shadow: none !important; }
 
 hr.star-light {
   margin: 25px auto 30px;
