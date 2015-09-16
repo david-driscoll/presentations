@@ -6,8 +6,8 @@
 
 	<title>OmniSharp liberating C# from Visual Studio</title>
 
-	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-	<meta name="author" content="Hakim El Hattab">
+	<meta name="description" content="OmniSharp Liberating C# from Visual Studio">
+	<meta name="author" content="David Driscoll">
 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -42,7 +42,7 @@
 
 		<!-- Any section element inside of this container is displayed as a slide -->
 		<div class="slides">
-			<section class="title" data-state="title" data-background="img/header.jpg" data-background-transition="slide">
+			<section class="title" data-state="title" data-background="img/header.jpg" data-background-transition="slide" data-transition="slide">
 				<div class="box">
 					<img class="img-responsive" src="img/logo-text.png" alt="">
 					<img class="img-responsive" style="height:208px; margin-left: 1em;" src="img/conf-logo.png" />
@@ -57,7 +57,7 @@
 						Hand raise for...
 
 						* Heard of OmniSharp
-						* OmniSharp (go more general)
+						* Used OmniSharp (go more general)
 						* VS Users
 						* Windows Users
 						* Mac Users
@@ -73,9 +73,30 @@
 				</div>
 			</section>
 
+			<section data-markdown>
+				<script type="text/template">
+				## Me
+
+				* Software Developer
+				* Husband and Father
+				* Twitter: <a href="#">@david_blacklite</a>
+				* Github: https://github.com/david-driscoll
+				* Blog: http://david-driscoll.github.io
+			  </script>
+
+			  <aside class="notes" data-markdown>
+				  <script type="text/template">
+					  * I tinker too, much to my wifes frustration.  She hates it when I say "I have an idea!"
+					  * Let me say, before I started working on OmniSharp I knew next to nothing about what makes an IDE good.
+					  * I thought I knew, but I soon learned I was wrong!
+					  * It's okay to be wrong, it's okay to make mistakes, it's what you learn from them that helps.
+				  </script>
+			  </aside>
+			</section>
+
 			<section>
 				<section>
-					<h2>What is OmniSharp?</h2>
+					<h2>What is <span class="no-text-transform">OmniSharp</span>?</h2>
 					<div class="fragment fade-in">OmniSharp is a family of Open Source projects, each with one goal:
 						<br />To enable a great .NET experience in
 						<span style="text-decoration: underline;">YOUR</span> editor of choice.
@@ -102,11 +123,11 @@
 			</section>
 
 			<section>
-				<h2>What does this mean?</h2>
+				<h3><span class="no-text-transform">OmniSharp</span> gives you the power...</h3>
 				<ul>
-					<li class="fragment">Choose <i>your</i> .NET platform</li>
-					<li class="fragment">Choose <i>your</i> .NET editor</li>
-					<li class="fragment">Customize <i>your</i> .NET experience</li>
+					<li class="fragment">To choose <i>your</i> .NET platform</li>
+					<li class="fragment">To choose <i>your</i> .NET editor</li>
+					<li class="fragment">To customize <i>your</i> .NET experience</li>
 				</ul>
 
 				<aside class="notes" data-markdown>
@@ -132,49 +153,51 @@
 				</aside>
 			</section>
 
-			<section class="editors">
-				<div class="editors-logos">
-					<div class="fragment fade-in" data-autoslide="300" data-fragment-index="2">
-						<img src="img/atom.png" class="fragment grow" data-autoslide="300" data-fragment-index="3" />
-						<img src="img/brackets.png" class="fragment grow" data-autoslide="300" data-fragment-index="7" />
-						<img src="img/emacs.png" class="fragment grow" data-autoslide="300" data-fragment-index="5" />
-					</div>
-					<div class="fragment fade-in" data-autoslide="300" data-fragment-index="2">
-						<img src="img/sublime.png" class="fragment grow" data-autoslide="300" data-fragment-index="6" />
-						<img src="img/vim.png" class="fragment grow" data-fragment-index="8" />
-						<img src="img/vscode.png" class="fragment grow" data-fragment-index="4" data-autoslide="300" />
-					</div>
-					<div class="editors-caption fragment current-visible" data-fragment-index="1">
-						We now have editor plugins for some of <br/> the most popular text editors
-					</div>
-					<div class="editors-caption">
-						<h2>How?</h2>
-					</div>
-				</div>
-
-				<aside class="notes" data-markdown>
-					<script type="text/template">
-						Editors are in non-biased alphabetical order :) We also ship with VSCode in the box
-					</script>
-				</aside>
-			</section>
-
 			<section>
-				<h3>Number of downloads</h3>
+				<section class="editors">
+					<div class="editors-logos">
+						<div class="fragment fade-in" data-autoslide="300" data-fragment-index="2">
+							<img src="img/atom.png" class="fragment grow" data-autoslide="300" data-fragment-index="3" />
+							<img src="img/brackets.png" class="fragment grow" data-autoslide="300" data-fragment-index="7" />
+							<img src="img/emacs.png" class="fragment grow" data-autoslide="300" data-fragment-index="5" />
+						</div>
+						<div class="fragment fade-in" data-autoslide="300" data-fragment-index="2">
+							<img src="img/sublime.png" class="fragment grow" data-autoslide="300" data-fragment-index="6" />
+							<img src="img/vim.png" class="fragment grow" data-fragment-index="8" />
+							<img src="img/vscode.png" class="fragment grow" data-fragment-index="4" data-autoslide="300" />
+						</div>
+						<div class="editors-caption fragment current-visible" data-fragment-index="1">
+							Pick your editor!
+						</div>
+						<div class="editors-caption">
+							<h2>How?</h2>
+						</div>
+					</div>
 
-				<ul>
-					<li>Atom - 25,000</li>
-					<li>Brackets - #TODO#</li>
-					<li>Emacs / Vim - ~400 clones / day</li>
-					<li>Sublime - 12,000</li>
-					<li>VS Code - #TODO#</li>
-				</ul>
+					<aside class="notes" data-markdown>
+						<script type="text/template">
+							Editors are in non-biased alphabetical order :) We also ship with VSCode in the box
+						</script>
+					</aside>
+				</section>
 
-				<aside class="notes" data-markdown>
-					<script type="text/template">
-						Atom is up over 10,000 since June. Brackets Emacs / Vim Sublime VS Code Some of these numbers may be infated by extra installs and other possibilities. As with all statistics take that with a grain of salt.
-					</script>
-				</aside>
+				<section>
+					<h3>Number of downloads</h3>
+
+					<ul>
+						<li>Atom - 25,000</li>
+						<li>Brackets - #TODO#</li>
+						<li>Emacs / Vim - ~400 clones / day</li>
+						<li>Sublime - 12,000</li>
+						<li>VS Code - #TODO#</li>
+					</ul>
+
+					<aside class="notes" data-markdown>
+						<script type="text/template">
+							Atom is up over 10,000 since June. Brackets Emacs / Vim Sublime VS Code Some of these numbers may be infated by extra installs and other possibilities. As with all statistics take that with a grain of salt.
+						</script>
+					</aside>
+				</section>
 			</section>
 
 			<section>
@@ -211,10 +234,10 @@
 			</section>
 			<section data-markdown>
 				<script type="text/template">
-					## OmniSharp Server
+					## <span class="no-text-transform">OmniSharp</span> Server
 					<br />
 					* V1 uses NRefactory and Nancy
-					* V2 uses <ins>Roslyn</ins> and AspNet 5
+					* V2 uses Roslyn and AspNet 5
 				</script>
 
 				<aside class="notes" data-markdown>
@@ -230,7 +253,7 @@
 				<script type="text/template">
 					## What is Roslyn?
 
-					* The C# and VB compilers reimagined <!-- .element: class="fragment" -->
+					* The C# and VB compilers re-imagined <!-- .element: class="fragment" -->
 					* Allows you the ability to write C# that can reason about code, written in C#. <!-- .element: class="fragment" -->
 					* Adds new features for editors <!-- .element: class="fragment" -->
 					  * Code Fixes
@@ -239,7 +262,7 @@
 
 				<aside class="notes" data-markdown>
 					<script type="text/template">
-						* From a developers persepective roslyn means very little.
+						* From a developers perspective roslyn means very little.
 						* This is a good thing
 						* Roslyn is very meta
 						* From a developer coding with roslyn it means a location
@@ -249,12 +272,86 @@
 				</aside>
 			</section>
 
-			<section>
-				<h1>Demos!</h1>
+			<section data-markdown>
+				<script type="text/template">
+					# Demos!
+				</script>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Minimize notes
+						* F11 to return to atom
+					</script>
+				</aside>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					## Coming soon... <span class="fragment">perhaps...</span>
+
+					* More editors extensions? <!-- .element: class="fragment" -->
+					* Additional code refactorings? <!-- .element: class="fragment" -->
+					* Continuous testing? <!-- .element: class="fragment" -->
+
+				</script>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Tell us what other editors you want to see
+						* Perhaps we may even get support to side-load refactorings like VS
+						* Continuous testing requires editor and server support
+					</script>
+				</aside>
 			</section>
 
 			<section>
+				<h3>Plugins</h3>
+				<img style="text-align: left;" src="img/cake.svg" height="340" class="fragment" />
+				<img style="text-align: left;" src="img/fsharp.png" height="340" class="fragment" />
+				<img style="text-align: left;" src="img/vb.png" height="340" class="fragment" />
 
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						* Cake is a build system kind of like make, except using C#
+						* F#
+						* VB
+					</script>
+				</aside>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					## Debugging
+
+					* VSCode has it <!-- .element: class="fragment" -->
+					* We want to add it for other editors <!-- .element: class="fragment" -->
+					* Portable PDB's have landed... <!-- .element: class="fragment" -->
+				</script>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						With Portable PDB's it may just be up to us adding that Debugging experience to editors, or adopting existing extensions that editors have.
+					</script>
+				</aside>
+			</section>
+
+			<section data-markdown>
+				<script type="text/template">
+					## Get Involved
+
+					* Visit us at http://www.omnisharp.net/
+					* Chat with us on Jabbr @ https://jabbr.net/#/rooms/omnisharp
+					* Find us on Github https://github.com/omnisharp
+					* Tweet us on twitter at @omnisharp
+				</script>
+
+				<aside class="notes" data-markdown>
+					<script type="text/template">
+						We are _always_ _always_ looking for help, drop us a line.
+
+						* We can use coders, testers, input or ideas
+					</script>
+				</aside>
 			</section>
 
 			<section>
@@ -563,9 +660,9 @@
 	</div>
 
 	<footer>
-		<img src="img/logo-text-h.png" />
+		<img src="img/logo-text-h.png" style="margin-left: 4em" />
 
-		<img class="img-responsive" style="float: right" src="img/conf-logo-white.png" />
+		<img class="img-responsive" style="float: right; margin-right: 4em" src="img/conf-logo-white.png" />
 	</footer>
 
 	<script src="lib/js/head.min.js"></script>
@@ -582,7 +679,7 @@
 			height: 900,
 			width: 1600,
 
-			transition: 'slide', // none/fade/slide/convex/concave/
+			transition: 'convex', // none/fade/slide/convex/concave/
 			multiplex: {
 		        // Example values. To generate your own, see the socket.io server instructions.
 		        secret: '14419322957904076034', // Obtained from the socket.io server. Gives this (the master) control of the presentation

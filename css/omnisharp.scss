@@ -19,6 +19,7 @@ footer {
         top: 0;
     }
 }
+
 .title {
     height: 100%;
     top: 0 !important;
@@ -47,14 +48,18 @@ footer {
     }
 }
 
+.no-text-transform {
+    text-transform: none;
+}
+
 .slides .twitter {
     background: rgba(0,0,0,0.5);
-    padding: 0.25em;
+    padding: 0.25em 0.5em;
     border: 0.25em rgba(0,0,0,0.0) solid;
     line-height: 1.4em;
     border-radius: 20px;
     position: fixed;
-    left: -82px;
+    left: -0.8em;
     bottom: 0;
     text-align: left;
 
