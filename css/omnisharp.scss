@@ -161,3 +161,34 @@ hr.star-light {
     text-align: center;
     color: #e1b573;
 }
+
+.reveal.paused .cover-container {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+}
+.reveal .cover {
+    height: 100%;
+    max-height: none;
+    max-width: none;
+}
+.reveal .cover-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 101;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 1s ease;
+            transition: all 1s ease;
+    background-color: white;
+}
+.reveal .pause-overlay {
+    //background: white;
+}
