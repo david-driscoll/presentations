@@ -31,6 +31,14 @@
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 
+	<style>
+		@media screen and (max-width: 1000px) {
+			footer {
+				display: none;
+			}
+		}
+	</style>
+
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -204,7 +212,7 @@
 
 					<ul>
 						<li>Atom - 25,000</li>
-						<li>Brackets - #TODO#</li>
+						<li>Brackets - ~5000</li>
 						<li>Emacs / Vim - ~400 clones / day</li>
 						<li>Sublime - 12,000</li>
 						<li>VS Code - #TODO#</li>
@@ -415,6 +423,7 @@
 			center: true,
 			height: 900,
 			width: 1600,
+			phone: false,
 
 			transition: 'convex', // none/fade/slide/convex/concave/
 			multiplex: {
@@ -435,7 +444,7 @@
 				{ src: 'lib/js/socket.io.min.js', async: true },
 				{ src: 'plugin/multiplex/master.js', async: true },
         		// and if you want speaker notes
-        		//{ src: 'plugin/notes-server/client.js', async: true },
+        		{ src: 'plugin/notes-server/client.js', async: true },
 		]
 		});
 	</script>

@@ -28,7 +28,7 @@ io.sockets.on( 'connection', function( socket ) {
 
 app.configure( function() {
 
-	[ 'css', 'js', 'images', 'plugin', 'lib' ].forEach( function( dir ) {
+	[ 'css', 'js', 'images', 'img', 'plugin', 'lib' ].forEach( function( dir ) {
 		app.use( '/' + dir, staticDir( opts.baseDir + dir ) );
 	});
 
@@ -38,6 +38,26 @@ app.get('/', function( req, res ) {
 
 	res.writeHead( 200, { 'Content-Type': 'text/html' } );
 	fs.createReadStream( opts.baseDir + '/index.html' ).pipe( res );
+
+});
+
+app.get( '/notes/:socketId', function( req, res ) {
+
+	fs.readFile( opts.baseDir + 'plugin/notes-server/notes.html', function( err, data ) {
+		res.send( Mustache.to_html( data.toString(), {
+			socketId : req.params.socketId
+		}));
+	});
+
+});
+
+app.get( '/phone/:socketId', function( req, res ) {
+
+	fs.readFile( opts.baseDir + 'plugin/notes-server/phone.html', function( err, data ) {
+		res.send( Mustache.to_html( data.toString(), {
+			socketId : req.params.socketId
+		}));
+	});
 
 });
 
