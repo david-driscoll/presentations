@@ -3,6 +3,7 @@ var fs			= require('fs');
 var io			= require('socket.io');
 var crypto		= require('crypto');
 var stream      = require('stream');
+var Mustache  = require('mustache');
 
 var app			= express.createServer();
 var staticDir	= express.static;
@@ -21,6 +22,14 @@ io.sockets.on('connection', function(socket) {
 			slideData.secret = null;
 			socket.broadcast.emit(slideData.socketId, slideData);
 		};
+	});
+
+	socket.on( 'connect', function( data ) {
+		socket.broadcast.emit( 'connect', data );
+	});
+
+	socket.on( 'statechanged', function( data ) {
+		socket.broadcast.emit( 'statechanged', data );
 	});
 });
 
@@ -42,8 +51,8 @@ app.get("/client", function(req, res) {
 	if (!clientHtml) {
 		clientHtml = fs.readFileSync(opts.baseDir + '/index.html').toString();
 		clientHtml = clientHtml.replace("'14419322957904076034'", "null");
-		clientHtml = clientHtml.replace("{ src: 'plugin/notes-server/client.js', async: true },", "");
-		clientHtml = clientHtml.replace('plugin/multiplex/master.js', 'plugin/multiplex/client.js')
+		clientHtml = clientHtml.replace("{ src: 'plugin/notes-server/client.js', async: true }", "");
+		//clientHtml = clientHtml.replace('plugin/multiplex/master.js', 'plugin/multiplex/client.js');
 	}
 
 	var s = new stream.Readable();
@@ -65,6 +74,16 @@ app.get("/token", function(req,res) {
 app.get( '/notes/:socketId', function( req, res ) {
 
 	fs.readFile( opts.baseDir + 'plugin/notes-server/notes.html', function( err, data ) {
+		res.send( Mustache.to_html( data.toString(), {
+			socketId : req.params.socketId
+		}));
+	});
+
+});
+
+app.get( '/phone/:socketId', function( req, res ) {
+
+	fs.readFile( opts.baseDir + 'plugin/notes-server/phone.html', function( err, data ) {
 		res.send( Mustache.to_html( data.toString(), {
 			socketId : req.params.socketId
 		}));
